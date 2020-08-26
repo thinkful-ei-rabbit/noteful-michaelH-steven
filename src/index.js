@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import {HelloWorld} from './state-drills/HelloWorld.js';
 import Bombs from './state-drills/Bomb';
+import Gun from './state-drills/RouletteGun';
 
-ReactDOM.render(<Bombs />, document.getElementById('root'));
+ReactDOM.render(<Gun />, document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
