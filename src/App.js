@@ -6,6 +6,6 @@ function App() {
       {'/* content goes here */'}
     </main>
   );
-}
+};
 
 export default App;
