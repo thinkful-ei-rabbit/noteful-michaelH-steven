@@ -1,12 +1,9 @@
 import React from 'react';
-import Notes from './Notes';
-import Folders from './Folders';
 
 class Main extends React.Component {
     renderNotes = () => {
-    return this.props.notes.map((note)=> <li key={note.id}>{note.name}</li>)
-        
-    } 
+        return this.props.notes.map((note) => <li key={note.id}>{note.name}{note.modified}</li>)
+    }
 
     render() {
         console.log(this.props.notes)
@@ -17,9 +14,7 @@ class Main extends React.Component {
                 </header>
                 <main>
                     <ol>
-                    {this.props.folders.map((folder) => <li key={folder.id}><a href={`/Folders/${folder.id}`}>{folder.name}</a></li>
-)}
-                        
+                        {this.props.folders.map((folder) => <li key={folder.id}><a href={`/Folders/${folder.id}`}>{folder.name}</a></li>)}
                     </ol>
                 </main>
                 <div className ='sidebar'>

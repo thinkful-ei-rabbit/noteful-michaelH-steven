@@ -1,7 +1,10 @@
 import React from 'react';
-import Folders from './Folders';
 
 class Notes extends React.Component {
+    renderNotes = () => {
+        return this.props.notes.map((note)=> <li key={note.id}>{note.name}</li>)
+    } 
+
     render() {
         return (
             <div>
@@ -10,12 +13,12 @@ class Notes extends React.Component {
                 </header>
                 <main>
                     <ol>
-                        {this.props.note}
+                        {this.renderNotes()}
                     </ol>
                 </main>
                 <sidebar>
                     <ul>
-                        {Folders}
+                        {'these are notes'}
                     </ul>
                 </sidebar>
             </div>

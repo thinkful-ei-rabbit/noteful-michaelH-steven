@@ -15,16 +15,16 @@ class App extends React.Component {
 
 
   render(){
-  return (
-    <main className='App'>
-     
-      <Route exact path='/'render={(routeProps) => {return <Main notes={this.state.notes}{...routeProps}folders={this.state.folders}/>}}/>
-      <Route exact path='/Folders/:folderId' component={Folders} />
-      <Route exact path='/Notes/:noteId' component={Notes} />
+    return (
+      <main className='App'>
       
-    </main>
-  );
-  }
+        <Route exact path='/' render={(routeProps) => {return <Main notes={this.state.notes}{...routeProps}folders={this.state.folders}/>}}/>
+        <Route exact path='/Folders/:folderId' render={(routeProps) => {return <Folders notes={this.state.notes}{...routeProps}folders={this.state.folders}/>}}/>
+        <Route exact path='/Notes/:noteId' render={(routeProps) => {return <Notes notes={this.state.notes}{...routeProps}folders={this.state.folders}/>}}/>
+        
+      </main>
+   );
+  };
 };
 
 
