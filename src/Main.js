@@ -3,25 +3,34 @@ import Notes from './Notes';
 import Folders from './Folders';
 
 class Main extends React.Component {
+    renderNotes = () => {
+    return this.props.notes.map((note)=> <li key={note.id}>{note.name}</li>)
+        
+    } 
+
     render() {
+        console.log(this.props.notes)
         return (
             <div>
                 <header>
-                    <h1>hello</h1>
+                    <h1>Noteful</h1>
                 </header>
                 <main>
                     <ol>
-                        {Notes}
+                    {this.props.folders.map((folder) => <li key={folder.id}><a href={`/Folders/${folder.id}`}>{folder.name}</a></li>
+)}
+                        
                     </ol>
                 </main>
-                <sidebar>
+                <div className ='sidebar'>
                     <ul>
-                        {Folders}
+                        {this.renderNotes()}
                     </ul>
-                </sidebar>
+                </div>
             </div>
         );
     };
 };
+
 
 export default Main;
