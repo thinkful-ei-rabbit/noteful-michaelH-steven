@@ -5,13 +5,12 @@ import Folders from './Folders';
 import Notes from './Notes';
 import STORE from './store';
 
-function App() {
-  // state: {
-  //   folders: [],
-  //   notes: []
-  // };
-
-
+class App extends React.Component() {
+  state = {
+    folders: STORE.folders,
+    notes: STORE.folders
+  }
+  
   return (
     <main className='App'>
       {'/* content goes here */'}
